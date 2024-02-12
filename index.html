@@ -73,7 +73,7 @@
                             <div class="labs-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="labs-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/labs/cabin.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/labs/1/Artemis.png" alt="..." />
                         </div>
                         <h2 class="text-center">Lab 1</h2>
                     </div>
@@ -203,16 +203,15 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
-                        <i class="fas fa-download me-2"></i>
-                        Free Download!
-                    </a>
+                <div class="ms-auto text-center">
+                    <p class="lead">The course focus is on systems level design and implementation of dynamic autonomous robots. With
+                        the recent DIY movement, design of kinematic robots is largely becoming a software challenge. In
+                        dynamic robots, however, any latency or noise can be detrimental. We will design a fast autonomous car,
+                        explore dynamic behaviors, acting forces, sensors, and reactive control on an embedded processor, as
+                        well as the benefit of partial off-board computation. Students will learn how to derive design
+                        specifications from abstract problem descriptions and gain familiarity with rapid prototyping techniques,
+                        system debugging, system evaluation, and online dissemination of work.
+                    </p>
                 </div>
             </div>
         </section>
@@ -333,12 +332,11 @@
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-lg-8">
+                                <div class="col-lg-10">
                                     <!-- labs Modal - Title-->
-                                    <h2 class="labs-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+                                    <h2 class="labs-modal-title text-secondary text-center text-uppercase mb-0">The Artemis board and Bluetooth</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -346,17 +344,99 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- labs Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/labs/cabin.png" alt="..." />
+                                    <img class="img-fluid rounded mx-auto d-block" src="assets/img/labs/1/Artemis.png" alt="..." />
                                     <!-- labs Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
+                                    <h3 class="text-left text-uppercase">Objective</h3>
+                                    <p class="modal-body text-left px-3">In this lab, I set up my board and ran through a few exercises to become familiar with running the board via Arduino. In the second part of this lab, 
+                                        I established communication between my computer and the Artemis through Bluetooth and established framework for sending data over Bluetooth using a Jupyter notebook.</p>
+                                    
+                                    <h3 class="text-left text-uppercase">Example: Blink it Up</h3>
+                                    <p class="modal-body text-left px-3">In this example, I ran premade Arduino code to verify the board works and I can flash code to it from Arduino. The code blinks the LED on and off.
+                                    </p>
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/d0LZcx0qdL0" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">Example: Serial</h3>
+                                    <p class="modal-body text-left px-3">The code from this example prints a message to the Serial line.</p>
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/1/Serial.jpg" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">Example: AnalogRead</h3>
+                                    <p class="modal-body text-left px-3">The code from this example reads the value from the temperature sensor and prints it to the Serial line.</p>
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://www.youtube.com/embed/LBNDkajGPdo" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">Example: MicrophoneOutput</h3>
+                                    <p class="modal-body text-left px-3">The code from this example reads the frequency heard by the microphone and outputs it to the Serial line.</p>
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://www.youtube.com/embed/meQSjGw7Pt0" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">Tuner</h3>
+                                    <p class="modal-body text-left px-3">I wrote code to turn on the onboard LED when the microphone picks up a musical "A" at 880Hz.</p>
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://www.youtube.com/embed/oD74gD0Oo88" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">Configuration</h3>
+                                    <p class="modal-body text-left px-3">For the second part of this lab, I had to update the code with the MAC address of my Artemis. Below is a screenshot of the Artemis outputting
+                                        its MAC address.</p>
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/1/MACaddress.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">ECHO</h3>
+                                    <p class="modal-body text-left px-3">The code block below sends an ECHO command to the Artemis, which then sends an augmented string back.</p>
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/1/MACaddress.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">Notification Handlers</h3>
+                                    <p class="modal-body text-left px-3">These functions receive strings from the Artemis board. One handler processes time stamps and the other processes time stamps and 
+                                        temperature readings.</p>
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/1/Notification Handlers.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">GET_TIME_MILLIS</h3>
+                                    <p class="modal-body text-left px-3">The code block below gets the current time in milliseconds from the Artemis and prints it.</p>
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/1/GET_TIME_MILLIS.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">GET_TIME_MILLIS Loop</h3>
+                                    <p class="modal-body text-left px-3">I then wrote code to continuously run the GET_TIME_MILLIS command in order to determine how fast messages could be sent.
+                                        Ultimately, it seems that the fastest reliable rate for receiving data in this manner is about 60ms.</p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/1/GET_TIME_MILLIS_LOOP code.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/1/GET_TIME_MILLIS_LOOP.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">GET_TIME_MILLIS Batch</h3>
+                                    <p class="modal-body text-left px-3">This code then takes a different approach, by batching time stamps from multiple GET_TIME_MILLIS commands into an array.
+                                        The SEND_TIME_DATA command then runs through this array and sends each data point as a string. This method is able to run around 15 times in 1ms.</p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/1/GET_TIME_MILLIS_LOOP batch send code.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/1/SEND_TIME_DATA code.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/1/SEND_TIME_DATA.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">GET_TEMP_READINGS Batch</h3>
+                                    <p class="modal-body text-left px-3">This code uses the batch approach to get temperature readings from the Artemis. This method is able to run around 8 times in 1ms.</p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/1/GET_TEMP_READINGS code.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/1/GET_TEMP_READINGS.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">Discussion</h3>
+                                    <p class="modal-body text-left px-3">Sending updates immediately gives the computer new information about every 60ms, which is way slower than the second method.
+                                        The second method is able to record data 15 times in 1 millisecond. The first method is better when we need to react to new data as soon as possible. The first 
+                                        method is worse if the Artemis isn't able to record data from other sensors while it is sending data to the computer. The second method is better when we want to 
+                                        collect as much data as possible, and when we don't need to process it on the computer side as soon as possible. Assuming the Artemis has 384kB of RAM, and that 
+                                        we are storing 150 byte values, we can store 2560 values before the Artemis runs out of memory.
+                                    </p>
+
+                                    <h3 class="text-left text-uppercase">Effective Data Rate and Overhead</h3>
+                                    <p class="modal-body text-left px-3">To test the data rate when using different sized replies, I wrote code to send replies of lengths between 5 and 120 bytes. 
+                                        I then timed how long it took for the computer to receive a reply back from the Artemis, and then divided the number of bytes sent by the time it took to 
+                                        get a response. I then plotted out the data rate as a function of the number of bytes sent.</p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/1/Data Rate code.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/1/Data Rate plot.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">Reliability</h3>
+                                    <p class="modal-body text-left px-3">When data is sent at a higher rate from the robot to the computer, it takes slightly longer than if smaller packets are sent. 
+                                        The computer was able to read all the data published, but did take slightly longer at 4 instances in the larger end of bytes sent, around 82, 90, 100, and 112 bytes.
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
