@@ -93,7 +93,7 @@
                             <div class="labs-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="labs-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/labs/circus.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/labs/3/TOF.jpg" alt="..." />
                         </div>
                         <h2 class="text-center">Lab 3</h2>
                     </div>
@@ -445,12 +445,11 @@
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-lg-8">
+                                <div class="col-lg-10">
                                     <!-- labs Modal - Title-->
-                                    <h2 class="labs-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
+                                    <h2 class="labs-modal-title text-secondary text-center text-uppercase mb-0">IMU</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -458,17 +457,31 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- labs Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/labs/cake.png" alt="..." />
+                                    <img class="img-fluid rounded mx-auto d-block" src="assets/img/labs/1/Artemis.png" alt="..." />
                                     <!-- labs Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
+                                    <h3 class="text-left text-uppercase">Objective</h3>
+                                    <p class="modal-body text-left px-3">Set up IMU</p>
+                                    
+                                    <h3 class="text-left text-uppercase">Example: Blink it Up</h3>
+                                    <p class="modal-body text-left px-3">In this example, I ran premade Arduino code to verify the board works and I can flash code to it from Arduino. The code blinks the LED on and off.
+                                    </p>
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/d0LZcx0qdL0" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">GET_TEMP_READINGS Batch</h3>
+                                    <p class="modal-body text-left px-3">This code uses the batch approach to get temperature readings from the Artemis. This method is able to run around 8 times in 1ms.</p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/1/GET_TEMP_READINGS code.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/1/GET_TEMP_READINGS.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">Discussion</h3>
+                                    <p class="modal-body text-left px-3">AD0_VAL is the value of the last bit of the I2C address. It was defaulted to 1, but I had to change it to 0 to because the ADR jumper is closed.
+                                        As I moved the board around, the accelerometer and gyroscope both output noisy signals. When the board was held still against a surface, the noise was greatly decreased.
+                                        I taped the accelerometer to a box in order to execute 90 degree rotations in both the roll and pitch directions, and found that the accelerometer was surprisingly accurate to +- 2 degrees.
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -477,12 +490,11 @@
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-lg-8">
+                                <div class="col-lg-10">
                                     <!-- labs Modal - Title-->
-                                    <h2 class="labs-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
+                                    <h2 class="labs-modal-title text-secondary text-center text-uppercase mb-0">TOFs</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -490,17 +502,73 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- labs Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/labs/circus.png" alt="..." />
+                                    <img class="img-fluid rounded mx-auto d-block" src="assets/img/labs/3/TOF.jpg" alt="..." />
                                     <!-- labs Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
+                                    <h3 class="text-left text-uppercase">Objective</h3>
+                                    <p class="modal-body text-left px-3">Wire and test TOFs off the robot.</p>
+                                    
+                                    <h3 class="text-left text-uppercase">Wired TOFs</h3>
+                                    <p class="modal-body text-left px-3">I soldered the TOFs to the QWIIC wires, and connected them to my Artemis.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/3/TOFs Wired.jpg" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">I2C</h3>
+                                    <p class="modal-body text-left px-3">After soldering the TOF sensor to the Artemis, I ran a quick piece of I2C code to check the address of the sensor. While I expected
+                                        an address of 0x52, the code returned 0x29. Looking at these two hexadecimal numbers, we notice that they are bit shifted values of each other. This is likely due 
+                                        to something within the communication protocol using the LSB as an I/O bit, and we therefore do not need to worry about this discrepancy.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/3/TOF Address 0x29.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">ToF Distance Modes</h3>
+                                    <p class="modal-body text-left px-3">I then set about testing a distance mode of my choice. The TOF sensors have a short, medium, and long distance mode, corresponding to 
+                                        1.2m, 3m, and 4m respectively. The short mode would provide the most fidelity, whereas the long mode would provide the most range with the sacrifice of resolution/accuracy 
+                                        of measurement. The medium range would likely be a middle grounds balancing these pros and cons. I decided to go with the short mode since the robot should ideally be able 
+                                        to react within 1m, and would benefit from accurate depth measurements when attempting to localize.
+                                    </p>
+
+                                    <h3 class="text-left text-uppercase">Testing Short Mode</h3>
+                                    <p class="modal-body text-left px-3">I tested the short mode by taking 50 TOF measurements at 100mm increments up to 1200mm. In these plots I show the sensor value compared 
+                                        to the actual distance, the error between the sensor and actual value as a function of the actual distance, and the ranging time in ms as a function of the target distance.
+                                        I found that the TOF would be pretty consistent up until 900mm, which is a bit dissapointing since the short mode should be accurate up to 1200mm.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/3/Testing Plots Code.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/3/Output_v_Actual.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/3/Error_v_Actual.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/3/Ranging_v_Target.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">2 TOFs</h3>
+                                    <p class="modal-body text-left px-3">Since we will be using two TOF sensors on the robot, I connected another one to the Artemis, this time adding an extra wire connecting the 
+                                        XSHUT pin on the TOF to pin 1 on the Artemis. This will allow us to drive the pin low to turn off the sensor while we change the address on the other TOF. Since the TOFs 
+                                        store their addresses in volatile memory, we will do this every time we boot up the Artemis. Below is the Serial output of the two sensors reading different values.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/3/2TOFs.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">TOF Speed Test</h3>
+                                    <p class="modal-body text-left px-3">As implied by the name of the course, it is important that we obtain sensor values quickly without hanging our code as it waits for the sensors 
+                                        to finish a measurement. I wrote code to output the clock upon every loop execution, and took advantage of the checkForDataReady() routine on the TOFs to return TOF values 
+                                        as fast as possible. As we can see in the picture, our TOFs take around 100ms to return a value, which corresponds closely to the ranging times as found in the previous test. 
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/3/TOF_speed_test.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">Timestamped Data</h3>
+                                    <p class="modal-body text-left px-3">I then wrote code to record timestamped TOF data and send said data to the computer over Bluetooth. Here are the two TOF sensors measuring 
+                                        an object from different depths, alongside each measurement's time stamp.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/3/Timestamped_data.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">Discussion</h3>
+                                    <p class="modal-body text-left px-3">One other distance sensor I found that was infrared based was the Sharp GP2Y0A41SK0F, which uses triangulation to determine distance by measuring 
+                                        the angle of the reflected light to calculate the distance to the target object. It has good range, reaching up to 3m, and is compact. However, it uses an analog output, and is 
+                                        susceptible to ambient light interference. Another would be the Sharp GP2Y0E03, which emits modulated infrared light, and measures the intensity of the reflected light to determine 
+                                        distance. While less impacted to target surface properties, the GP2Y0E03 suffers from a limited range and lower accuracy.
+                                    </p>
+                                    <p class="modal-body text-left px-3">The TOF sensors we use are definitely sensitive to different textures, especially extremely reflective or transparent materials. Textured materials 
+                                        that scatter light in different directions make it difficult for the TOF sensors to measure the light pulse as it bounces off the surface. Color is slightly less of an 
+                                        issue, but I found that the sensor works better and is more consistent with lighter surfaces than darker surfaces.
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
