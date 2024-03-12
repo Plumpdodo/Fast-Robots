@@ -103,7 +103,7 @@
                             <div class="labs-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="labs-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/labs/game.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/labs/4/MotorDriver.jpg" alt="..." />
                         </div>
                         <h2 class="text-center">Lab 4</h2>
                     </div>
@@ -579,9 +579,9 @@
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-lg-8">
+                                <div class="col-lg-10">
                                     <!-- labs Modal - Title-->
-                                    <h2 class="labs-modal-title text-secondary text-uppercase mb-0">Controller</h2>
+                                    <h2 class="labs-modal-title text-secondary text-center text-uppercase mb-0">Motor Drivers</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -589,17 +589,83 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- labs Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/labs/game.png" alt="..." />
+                                    <img class="img-fluid rounded mx-auto d-block" src="assets/img/labs/4/MotorDriver.jpg" alt="..." />
                                     <!-- labs Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
+                                    <h3 class="text-left text-uppercase">Objective</h3>
+                                    <p class="modal-body text-left px-3">Wire motor drivers to robot and perform calibration and open loop control.</p>
+                                    
+                                    <h3 class="text-left text-uppercase">Circuit Diagram</h3>
+                                    <p class="modal-body text-left px-3">Here is a diagram of the circuit I constructed to integrate motor drivers into my robot. I chose 5, 6, 11, and 12 since they all have 
+                                        PWM functionality, and are on symmetric opposite sides of the board, allowing for easier soldering and cleaner wire distribution. The Artemis and motor drivers are 
+                                        powered by separate batteries to avoid large current draw potentially causing the Artemis to shut off and reset.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/4/Diagram.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">Testing Motor Drivers</h3>
+                                    <p class="modal-body text-left px-3">After soldering the motor to the motor driver and to the Artemis, I hooked it all up to the oscilloscope and power supply. To model 
+                                        being connected to the 850mAh battery, I set the power supply to 3.7V, and ran quick test code to send a PWM signal to the motor driver using analogWrite. Here is the 
+                                        code snippet, setup of the connections, oscilloscope output, as well as a video of the motor running forward and backward.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/4/MotorDriverTest.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/4/Connections.jpeg" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/4/Oscilliscope.jpeg" alt="..." />
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/Wy6yUDXoDh0" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/OwFeaIA2uTo" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">Components Wired in Car</h3>
+                                    <p class="modal-body text-left px-3">After confirming that one motor driver worked, I soldered up the other motor driver, connected the V_in and grounds to the battery, 
+                                        and secured everything inside the car.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/4/Final Connections.JPG" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">Lower limit PWM</h3>
+                                    <p class="modal-body text-left px-3">I then tested the motor's lower limit range by lowering the PWM value until the car wouldn't move anymore. To help me with this, 
+                                        I made a new command and sent strings using python containing PWM duty cycles for left and right motors as well as the amount of time to run the cycle for.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/4/DRIVE.png" alt="..." />
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/ZQw6rzsgQ8I" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">Calibration</h3>
+                                    <p class="modal-body text-left px-3">Since the two motors are slightly different and have different amounts of friction within them, the car doesn't travel straight when 
+                                        the same PWM duty cycle is sent to both motors. To get around this, I tested to find a calibration factor that would slow down one motor to match the speed of the 
+                                        other. Here is a video of the robot following a line in my kitchen.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/4/Calibration.png" alt="..." />
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/EgLta3kZQx4" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">Open Loop</h3>
+                                    <p class="modal-body text-left px-3">Then for fun, I had the robot drive out of my kitchen into the hallway using open loop control and sending PWM signals to make it turn.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/4/Open Loop.png" alt="..." />
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/hNckADY5z2Q" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">analogWrite Frequency</h3>
+                                    <p class="modal-body text-left px-3">
+                                        The analogWrite runs at a frequency of ~400-500 Hz, which is plenty fast for our robot and its intended purposes. Manually configuring the timers would help in allowing us 
+                                        to hold a steadier PWM signal.
+                                    </p>
+
+                                    <h3 class="text-left text-uppercase">Lowest PWM speed</h3>
+                                    <p class="modal-body text-left px-3">Finally, I tested to find the slowest that I could make the robot go without stopping once in motion. I did this by having the robot 
+                                        start slowly and then decrease its PWM duty cycle until it was barely moving. I stopped at the value one before the robot came to a stop before the allotted time was 
+                                        up, and the robot would whine indicating the motors were still trying to run but couldn't.
+                                    </p>
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/tEC-2caMqZQ" allowfullscreen></iframe>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
