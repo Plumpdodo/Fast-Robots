@@ -113,7 +113,7 @@
                             <div class="labs-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="labs-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/labs/safe.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/labs/5/PID.webp" alt="..." />
                         </div>
                         <h2 class="text-center">Lab 5</h2>
                     </div>
@@ -674,12 +674,11 @@
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-lg-8">
+                                <div class="col-lg-10">
                                     <!-- labs Modal - Title-->
-                                    <h2 class="labs-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
+                                    <h2 class="labs-modal-title text-secondary text-center text-uppercase mb-0">Linear PID Control</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -687,17 +686,54 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- labs Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/labs/safe.png" alt="..." />
+                                    <img class="img-fluid rounded mx-auto d-block" src="assets/img/labs/5/PID.webp" alt="..." />
                                     <!-- labs Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
+                                    <h3 class="text-left text-uppercase">Objective</h3>
+                                    <p class="modal-body text-left px-3">Demonstrate closed loop control in implementing a PID controller to have the robot stop 300 mm from walls.</p>
+                                    
+                                    <h3 class="text-left text-uppercase">Prelab</h3>
+                                    <p class="modal-body text-left px-3">To collect and send data, I implemented a readSensor function that checks if the TOFs and IMU have data ready to be pulled. If they 
+                                        do, the Artemis will store their values onboard into arrays. If the sensors do not have new values ready, the Artemis will extrapolate from existing data to update 
+                                        the arrays. Upon receiving a sendData command, the Artemis will send all the array data, grouped by timestamp, over BLE, which is received by a complementary function. 
+                                        I have included the code for the readSensor, sendData, and PID callback function below.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/5/readSensors 1.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/5/readSensors 2.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/5/readSensors 3.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/5/sendData.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/5/PID callback.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">PID Discussion</h3>
+                                    <p class="modal-body text-left px-3">When choosing my controller, I decided to go with a PID in order to address the problem of overshoot. I ended up with Kp = 0.5, 
+                                        Ki = 0.1, and Kd = 0.4. The Ki was critical in eliminating steady state error, and the high Kd was needed to minimize overshoot. The TOFs were left at short range and 
+                                        with smallest sampling time in order to increase the frequency of sampling to provide the PID loop with data as often as possible.
+                                    </p>
+
+                                    <h3 class="text-left text-uppercase">Graphs and Videos</h3>
+                                    <p class="modal-body text-left px-3">Here are two graphs showing the PID performance while tuning. As you can see, the first attempt had overshoot, which was minimized 
+                                        in the second attempt by increasing Kd. We can also see that the robot performs on both hardwood and carpet, but was tuned on hardwood.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/5/kp0.5 ki0 kd0.1.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/5/kp0.5 ki0.01 kd0.4.png" alt="..." />
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-1">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/dvnnk3Tl2Y0" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/r8WhOPxs_g8" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">Integral Windup</h3>
+                                    <p class="modal-body text-left px-3">I capped the integral windup by simpling capping the I term in the PID control. This is necessary in order to remove saturation from 
+                                        the system in the case that the system is unable to react to errors quicker than the integral term increases to a saturating value. This helps the car perform 
+                                        similarly on carpet as it does hardwood, since carpet makes the robot move slower and therefore accumulate more error. Here is a video of the robot on carpet without 
+                                        integral windup protection.
+                                    </p>
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/embB4fVp0t8" allowfullscreen></iframe>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
