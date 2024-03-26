@@ -129,17 +129,17 @@
                     </div>
                     <!-- labs Item 7-->
                     <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="labs-item mx-auto" data-bs-toggle="modal" data-bs-target="#labsModal1">
+                        <div class="labs-item mx-auto" data-bs-toggle="modal" data-bs-target="#labsModal7">
                             <div class="labs-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="labs-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/labs/cabin.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/labs/7/KF.png." />
                         </div>
                         <h2 class="text-center">Lab 7</h2>
                     </div>
                     <!-- labs Item 8-->
                     <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="labs-item mx-auto" data-bs-toggle="modal" data-bs-target="#labsModal2">
+                        <div class="labs-item mx-auto" data-bs-toggle="modal" data-bs-target="#labsModal8">
                             <div class="labs-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="labs-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -149,7 +149,7 @@
                     </div>
                     <!-- labs Item 9-->
                     <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="labs-item mx-auto" data-bs-toggle="modal" data-bs-target="#labsModal3">
+                        <div class="labs-item mx-auto" data-bs-toggle="modal" data-bs-target="#labsModal9">
                             <div class="labs-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="labs-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -159,7 +159,7 @@
                     </div>
                     <!-- labs Item 10-->
                     <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="labs-item mx-auto" data-bs-toggle="modal" data-bs-target="#labsModal4">
+                        <div class="labs-item mx-auto" data-bs-toggle="modal" data-bs-target="#labsModal10">
                             <div class="labs-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="labs-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -169,7 +169,7 @@
                     </div>
                     <!-- labs Item 11-->
                     <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="labs-item mx-auto" data-bs-toggle="modal" data-bs-target="#labsModal5">
+                        <div class="labs-item mx-auto" data-bs-toggle="modal" data-bs-target="#labsModal11">
                             <div class="labs-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="labs-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -179,7 +179,7 @@
                     </div>
                     <!-- labs Item 12-->
                     <div class="col-md-6 col-lg-4">
-                        <div class="labs-item mx-auto" data-bs-toggle="modal" data-bs-target="#labsModal6">
+                        <div class="labs-item mx-auto" data-bs-toggle="modal" data-bs-target="#labsModal12">
                             <div class="labs-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="labs-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
@@ -739,6 +739,359 @@
         </div>
         <!-- labs Modal 6-->
         <div class="labs-modal modal fade" id="labsModal6" tabindex="-1" aria-labelledby="labsModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10">
+                                    <!-- labs Modal - Title-->
+                                    <h2 class="labs-modal-title text-secondary text-center text-uppercase mb-0">Orientation PID Control</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- labs Modal - Image-->
+                                    <img class="img-fluid rounded mx-auto d-block" src="assets/img/labs/6/Theta.png" alt="..." />
+                                    <!-- labs Modal - Text-->
+                                    <h3 class="text-left text-uppercase">Objective</h3>
+                                    <p class="modal-body text-left px-3">Demonstrate closed loop control in implementing a PID controller to have the robot turn 90 degrees.</p>
+                                    
+                                    <h3 class="text-left text-uppercase">Prelab</h3>
+                                    <p class="modal-body text-left px-3">To collect and send data, I used the same readSensor function I used in lab 5, since it also handled IMU data. I removed the
+                                        extrapolating function since the IMU was able to reliably return values to the Artemis every loop execution. I modified the PID callback function on the 
+                                        Python side to handle the new rotational PID data as seen below. I also used a SPIN function in my code to have the robot execute spins. I found that the right 
+                                        motor spun slower than the left motor, requiring an alpha value to scale up the motor input. Below is the SPIN function as well as the rotationalPID code and 
+                                        PID_ROTATIONAL command.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Parameters.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Spin.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/rotationalPID.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/6/PID_ROTATIONAL.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">PID Discussion</h3>
+                                    <p class="modal-body text-left px-3">When choosing my controller, I decided to go with a PID in order to address the problem of overshoot. I ended up with Kp = 10, 
+                                        Ki = 0.4, and Kd = 2. The Ki was critical in eliminating steady state error, and the high Kd was needed to minimize overshoot. While smaller Kp values worked, a 
+                                        higher value was chosen to make the turn quicker. Compared to the TOFs, the IMU returned data every loop execution, matching the rate of our PID controller, so 
+                                        no modifications to the sensor's configuration was necessary.
+                                    </p>
+
+                                    <h3 class="text-left text-uppercase">Graphs and Videos</h3>
+                                    <p class="modal-body text-left px-3">Here is a graph and video of a successful run of the 90 degree turn.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Angle vs Time.png" alt="..." />
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/bOGNaxq4hjg" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">Integral Windup</h3>
+                                    <p class="modal-body text-left px-3">I capped the integral windup by simply capping the I term in the PID control. This is necessary in order to remove saturation from 
+                                        the system in the case that the system is unable to react to errors quicker than the integral term increases to a saturating value.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- labs Modal 7-->
+        <div class="labs-modal modal fade" id="labsModal7" tabindex="-1" aria-labelledby="labsModal7" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10">
+                                    <!-- labs Modal - Title-->
+                                    <h2 class="labs-modal-title text-secondary text-center text-uppercase mb-0">Kalman Filter</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- labs Modal - Image-->
+                                    <img class="img-fluid rounded mx-auto d-block" src="assets/img/labs/7/KF.png" alt="..." />
+                                    <!-- labs Modal - Text-->
+                                    <h3 class="text-left text-uppercase">Objective</h3>
+                                    <p class="modal-body text-left px-3">Implement a Kalman Filter on the robot to supplement slowly sampled TOF values by predicting the state of the robot.</p>
+                                    
+                                    <h3 class="text-left text-uppercase">State Characterization</h3>
+                                    <p class="modal-body text-left px-3">I began by subjecting my robot to a step response, where I assert a PWM close to the maximum speed of the robot. The robot is left 
+                                        to reach steady state before hitting a pillow to prevent damage. In doing so, I saved the TOF data and motor input data over bluetooth to be processed in Python. I 
+                                        took the TOF data along with the timestamps in order to estimate the velocity of the car. After I got these graphs, I calculated the 90% rise time and the steady 
+                                        state speed to calculate the parameters I need in my Kalman Filter matrices. In the end I come away with d = 0.000238 and m = 6.204e-5. While these values seem 
+                                        very small, this was probably because I ran my robot at such a high speed. If there is discrepancies in my Kalman Filter compared to the measured values, I will 
+                                        re-characterize the system at a slower speed.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/7/Characterizing Dist v Time.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/7/Characterizing Vel v Time.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/7/Characterizing PWM v Time.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/7/Init Matrices.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">Kalman Filter Function</h3>
+                                    <p class="modal-body text-left px-3">Using the provided code as a reference, I defined a KF function to take inputs and provide a Mu and Sigma. The input covariance 
+                                        matrices were ballparked to begin with and I adjusted them to favor the sensor data over the state. After doing so, I got these graphs back which not only closely 
+                                        matched the raw data, but also provided a much smoother estimation of the state, especially when looking at the velocity graph.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/7/KF Function.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/7/KF Dist v Time.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/7/KF Vel v Time.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">5000 Task</h3>
+                                    <p class="modal-body text-left px-3">I then went back and had the Kalman Filter run at twice the frequency of the TOF data by halving my delta t, discretizing my 
+                                        matrices using this new delta t, and running the Kalman Filter twice per TOF data entry: once with the TOF data and once with the estimated measurement. This 
+                                        resulted in a very noisy graph, with high error in the beginning. I believe that this can be reconciled by fine tuning the covariance values better, and will 
+                                        try increasing my initial sigma matrix since the system is bound to perform worse in the beginning since it is essentially making up data.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/7/High Freq KF Dist v Time.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/7/High Freq KF Vel v Time.png" alt="..." />
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- labs Modal 8-->
+        <div class="labs-modal modal fade" id="labsModal8" tabindex="-1" aria-labelledby="labsModal8" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10">
+                                    <!-- labs Modal - Title-->
+                                    <h2 class="labs-modal-title text-secondary text-center text-uppercase mb-0">Orientation PID Control</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- labs Modal - Image-->
+                                    <img class="img-fluid rounded mx-auto d-block" src="assets/img/labs/6/Theta.png" alt="..." />
+                                    <!-- labs Modal - Text-->
+                                    <h3 class="text-left text-uppercase">Objective</h3>
+                                    <p class="modal-body text-left px-3">Demonstrate closed loop control in implementing a PID controller to have the robot turn 90 degrees.</p>
+                                    
+                                    <h3 class="text-left text-uppercase">Prelab</h3>
+                                    <p class="modal-body text-left px-3">To collect and send data, I used the same readSensor function I used in lab 5, since it also handled IMU data. I removed the
+                                        extrapolating function since the IMU was able to reliably return values to the Artemis every loop execution. I modified the PID callback function on the 
+                                        Python side to handle the new rotational PID data as seen below. I also used a SPIN function in my code to have the robot execute spins. I found that the right 
+                                        motor spun slower than the left motor, requiring an alpha value to scale up the motor input. Below is the SPIN function as well as the rotationalPID code and 
+                                        PID_ROTATIONAL command.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Parameters.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Spin.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/rotationalPID.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/6/PID_ROTATIONAL.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">PID Discussion</h3>
+                                    <p class="modal-body text-left px-3">When choosing my controller, I decided to go with a PID in order to address the problem of overshoot. I ended up with Kp = 10, 
+                                        Ki = 0.4, and Kd = 2. The Ki was critical in eliminating steady state error, and the high Kd was needed to minimize overshoot. While smaller Kp values worked, a 
+                                        higher value was chosen to make the turn quicker. Compared to the TOFs, the IMU returned data every loop execution, matching the rate of our PID controller, so 
+                                        no modifications to the sensor's configuration was necessary.
+                                    </p>
+
+                                    <h3 class="text-left text-uppercase">Graphs and Videos</h3>
+                                    <p class="modal-body text-left px-3">Here is a graph and video of a successful run of the 90 degree turn.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Angle vs Time.png" alt="..." />
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/bOGNaxq4hjg" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">Integral Windup</h3>
+                                    <p class="modal-body text-left px-3">I capped the integral windup by simply capping the I term in the PID control. This is necessary in order to remove saturation from 
+                                        the system in the case that the system is unable to react to errors quicker than the integral term increases to a saturating value.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- labs Modal 9-->
+        <div class="labs-modal modal fade" id="labsModal9" tabindex="-1" aria-labelledby="labsModal9" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10">
+                                    <!-- labs Modal - Title-->
+                                    <h2 class="labs-modal-title text-secondary text-center text-uppercase mb-0">Orientation PID Control</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- labs Modal - Image-->
+                                    <img class="img-fluid rounded mx-auto d-block" src="assets/img/labs/6/Theta.png" alt="..." />
+                                    <!-- labs Modal - Text-->
+                                    <h3 class="text-left text-uppercase">Objective</h3>
+                                    <p class="modal-body text-left px-3">Demonstrate closed loop control in implementing a PID controller to have the robot turn 90 degrees.</p>
+                                    
+                                    <h3 class="text-left text-uppercase">Prelab</h3>
+                                    <p class="modal-body text-left px-3">To collect and send data, I used the same readSensor function I used in lab 5, since it also handled IMU data. I removed the
+                                        extrapolating function since the IMU was able to reliably return values to the Artemis every loop execution. I modified the PID callback function on the 
+                                        Python side to handle the new rotational PID data as seen below. I also used a SPIN function in my code to have the robot execute spins. I found that the right 
+                                        motor spun slower than the left motor, requiring an alpha value to scale up the motor input. Below is the SPIN function as well as the rotationalPID code and 
+                                        PID_ROTATIONAL command.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Parameters.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Spin.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/rotationalPID.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/6/PID_ROTATIONAL.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">PID Discussion</h3>
+                                    <p class="modal-body text-left px-3">When choosing my controller, I decided to go with a PID in order to address the problem of overshoot. I ended up with Kp = 10, 
+                                        Ki = 0.4, and Kd = 2. The Ki was critical in eliminating steady state error, and the high Kd was needed to minimize overshoot. While smaller Kp values worked, a 
+                                        higher value was chosen to make the turn quicker. Compared to the TOFs, the IMU returned data every loop execution, matching the rate of our PID controller, so 
+                                        no modifications to the sensor's configuration was necessary.
+                                    </p>
+
+                                    <h3 class="text-left text-uppercase">Graphs and Videos</h3>
+                                    <p class="modal-body text-left px-3">Here is a graph and video of a successful run of the 90 degree turn.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Angle vs Time.png" alt="..." />
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/bOGNaxq4hjg" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">Integral Windup</h3>
+                                    <p class="modal-body text-left px-3">I capped the integral windup by simply capping the I term in the PID control. This is necessary in order to remove saturation from 
+                                        the system in the case that the system is unable to react to errors quicker than the integral term increases to a saturating value.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- labs Modal 10-->
+        <div class="labs-modal modal fade" id="labsModal10" tabindex="-1" aria-labelledby="labsModal10" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10">
+                                    <!-- labs Modal - Title-->
+                                    <h2 class="labs-modal-title text-secondary text-center text-uppercase mb-0">Orientation PID Control</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- labs Modal - Image-->
+                                    <img class="img-fluid rounded mx-auto d-block" src="assets/img/labs/6/Theta.png" alt="..." />
+                                    <!-- labs Modal - Text-->
+                                    <h3 class="text-left text-uppercase">Objective</h3>
+                                    <p class="modal-body text-left px-3">Demonstrate closed loop control in implementing a PID controller to have the robot turn 90 degrees.</p>
+                                    
+                                    <h3 class="text-left text-uppercase">Prelab</h3>
+                                    <p class="modal-body text-left px-3">To collect and send data, I used the same readSensor function I used in lab 5, since it also handled IMU data. I removed the
+                                        extrapolating function since the IMU was able to reliably return values to the Artemis every loop execution. I modified the PID callback function on the 
+                                        Python side to handle the new rotational PID data as seen below. I also used a SPIN function in my code to have the robot execute spins. I found that the right 
+                                        motor spun slower than the left motor, requiring an alpha value to scale up the motor input. Below is the SPIN function as well as the rotationalPID code and 
+                                        PID_ROTATIONAL command.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Parameters.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Spin.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/rotationalPID.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/6/PID_ROTATIONAL.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">PID Discussion</h3>
+                                    <p class="modal-body text-left px-3">When choosing my controller, I decided to go with a PID in order to address the problem of overshoot. I ended up with Kp = 10, 
+                                        Ki = 0.4, and Kd = 2. The Ki was critical in eliminating steady state error, and the high Kd was needed to minimize overshoot. While smaller Kp values worked, a 
+                                        higher value was chosen to make the turn quicker. Compared to the TOFs, the IMU returned data every loop execution, matching the rate of our PID controller, so 
+                                        no modifications to the sensor's configuration was necessary.
+                                    </p>
+
+                                    <h3 class="text-left text-uppercase">Graphs and Videos</h3>
+                                    <p class="modal-body text-left px-3">Here is a graph and video of a successful run of the 90 degree turn.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Angle vs Time.png" alt="..." />
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/bOGNaxq4hjg" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">Integral Windup</h3>
+                                    <p class="modal-body text-left px-3">I capped the integral windup by simply capping the I term in the PID control. This is necessary in order to remove saturation from 
+                                        the system in the case that the system is unable to react to errors quicker than the integral term increases to a saturating value.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- labs Modal 11-->
+        <div class="labs-modal modal fade" id="labsModal11" tabindex="-1" aria-labelledby="labsModal11" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10">
+                                    <!-- labs Modal - Title-->
+                                    <h2 class="labs-modal-title text-secondary text-center text-uppercase mb-0">Orientation PID Control</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- labs Modal - Image-->
+                                    <img class="img-fluid rounded mx-auto d-block" src="assets/img/labs/6/Theta.png" alt="..." />
+                                    <!-- labs Modal - Text-->
+                                    <h3 class="text-left text-uppercase">Objective</h3>
+                                    <p class="modal-body text-left px-3">Demonstrate closed loop control in implementing a PID controller to have the robot turn 90 degrees.</p>
+                                    
+                                    <h3 class="text-left text-uppercase">Prelab</h3>
+                                    <p class="modal-body text-left px-3">To collect and send data, I used the same readSensor function I used in lab 5, since it also handled IMU data. I removed the
+                                        extrapolating function since the IMU was able to reliably return values to the Artemis every loop execution. I modified the PID callback function on the 
+                                        Python side to handle the new rotational PID data as seen below. I also used a SPIN function in my code to have the robot execute spins. I found that the right 
+                                        motor spun slower than the left motor, requiring an alpha value to scale up the motor input. Below is the SPIN function as well as the rotationalPID code and 
+                                        PID_ROTATIONAL command.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Parameters.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Spin.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/rotationalPID.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/6/PID_ROTATIONAL.png" alt="..." />
+
+                                    <h3 class="text-left text-uppercase">PID Discussion</h3>
+                                    <p class="modal-body text-left px-3">When choosing my controller, I decided to go with a PID in order to address the problem of overshoot. I ended up with Kp = 10, 
+                                        Ki = 0.4, and Kd = 2. The Ki was critical in eliminating steady state error, and the high Kd was needed to minimize overshoot. While smaller Kp values worked, a 
+                                        higher value was chosen to make the turn quicker. Compared to the TOFs, the IMU returned data every loop execution, matching the rate of our PID controller, so 
+                                        no modifications to the sensor's configuration was necessary.
+                                    </p>
+
+                                    <h3 class="text-left text-uppercase">Graphs and Videos</h3>
+                                    <p class="modal-body text-left px-3">Here is a graph and video of a successful run of the 90 degree turn.
+                                    </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Angle vs Time.png" alt="..." />
+                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
+                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/bOGNaxq4hjg" allowfullscreen></iframe>
+                                    </div>
+
+                                    <h3 class="text-left text-uppercase">Integral Windup</h3>
+                                    <p class="modal-body text-left px-3">I capped the integral windup by simply capping the I term in the PID control. This is necessary in order to remove saturation from 
+                                        the system in the case that the system is unable to react to errors quicker than the integral term increases to a saturating value.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- labs Modal 12-->
+        <div class="labs-modal modal fade" id="labsModal12" tabindex="-1" aria-labelledby="labsModal12" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
