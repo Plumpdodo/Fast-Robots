@@ -153,7 +153,7 @@
                             <div class="labs-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="labs-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/labs/circus.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/labs/9/MapDora.png" alt="..." />
                         </div>
                         <h2 class="text-center">Lab 9</h2>
                     </div>
@@ -911,7 +911,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-10">
                                     <!-- labs Modal - Title-->
-                                    <h2 class="labs-modal-title text-secondary text-center text-uppercase mb-0">Orientation PID Control</h2>
+                                    <h2 class="labs-modal-title text-secondary text-center text-uppercase mb-0">Mapping</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -919,42 +919,36 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- labs Modal - Image-->
-                                    <img class="img-fluid rounded mx-auto d-block" src="assets/img/labs/6/Theta.png" alt="..." />
+                                    <img class="img-fluid rounded mx-auto d-block" src="assets/img/labs/9/MapDora.png" alt="..." />
                                     <!-- labs Modal - Text-->
                                     <h3 class="text-left text-uppercase">Objective</h3>
-                                    <p class="modal-body text-left px-3">Demonstrate closed loop control in implementing a PID controller to have the robot turn 90 degrees.</p>
+                                    <p class="modal-body text-left px-3">Use the robot's TOFs and angular control to map out an environment.</p>
                                     
                                     <h3 class="text-left text-uppercase">Prelab</h3>
-                                    <p class="modal-body text-left px-3">To collect and send data, I used the same readSensor function I used in lab 5, since it also handled IMU data. I removed the
-                                        extrapolating function since the IMU was able to reliably return values to the Artemis every loop execution. I modified the PID callback function on the 
-                                        Python side to handle the new rotational PID data as seen below. I also used a SPIN function in my code to have the robot execute spins. I found that the right 
-                                        motor spun slower than the left motor, requiring an alpha value to scale up the motor input. Below is the SPIN function as well as the rotationalPID code and 
-                                        PID_ROTATIONAL command.
+                                    <p class="modal-body text-left px-3">In order to perform the slow controlled spin to take TOF readings, I made a new command called mapSpin that would run the rotational 
+                                        PID controller and increment the angle the robot was pointing at by 15 degrees every second. After adjusting the PID values a bit to get the robot to respond to low 
+                                        angle errors, I was able to get the robot to perform the 15 degree turn in about a quarter of a second, leaving the TOFs 0.75s to take readings. The code for the 
+                                        mapSpin function is below.
                                     </p>
-                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Parameters.png" alt="..." />
-                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Spin.png" alt="..." />
-                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/rotationalPID.png" alt="..." />
-                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/6/PID_ROTATIONAL.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/9/mapSpin.png" alt="..." />
 
-                                    <h3 class="text-left text-uppercase">PID Discussion</h3>
-                                    <p class="modal-body text-left px-3">When choosing my controller, I decided to go with a PID in order to address the problem of overshoot. I ended up with Kp = 10, 
-                                        Ki = 0.4, and Kd = 2. The Ki was critical in eliminating steady state error, and the high Kd was needed to minimize overshoot. While smaller Kp values worked, a 
-                                        higher value was chosen to make the turn quicker. Compared to the TOFs, the IMU returned data every loop execution, matching the rate of our PID controller, so 
-                                        no modifications to the sensor's configuration was necessary.
+                                    <h3 class="text-left text-uppercase">Individual Spins</h3>
+                                    <p class="modal-body text-left px-3">I then had the robot perform mapping spins in 4 designated locations in the environment, where it was able to take these readings. 
+                                        The red dots are the readings taken with the forward facing TOF and the blue dots are the ones with the TOF facing off to the left. Using some transformation 
+                                        matrix magic, I was able to convert these readings into the global frame and plot out where the robot believes the walls to be.
                                     </p>
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/9/Spin 1.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/9/Spin 2.png" alt="..." />                                    
+                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/9/Spin 3.png" alt="..." />
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/9/Spin 4.png" alt="..." />
 
-                                    <h3 class="text-left text-uppercase">Graphs and Videos</h3>
-                                    <p class="modal-body text-left px-3">Here is a graph and video of a successful run of the 90 degree turn.
-                                    </p>
-                                    <img class="img-fluid rounded d-block mb-1" src="assets/img/labs/6/Angle vs Time.png" alt="..." />
-                                    <div class="embed-responsive text-center embed-responsive-16by9 mb-5">
-                                        <iframe width="500px" height="400px" class="embed-responsive-item" src="https://youtube.com/embed/bOGNaxq4hjg" allowfullscreen></iframe>
-                                    </div>
-
-                                    <h3 class="text-left text-uppercase">Integral Windup</h3>
-                                    <p class="modal-body text-left px-3">I capped the integral windup by simply capping the I term in the PID control. This is necessary in order to remove saturation from 
-                                        the system in the case that the system is unable to react to errors quicker than the integral term increases to a saturating value.
-                                    </p>
+                                    <h3 class="text-left text-uppercase">Mapping</h3>
+                                    <p class="modal-body text-left px-3">I then conglomerated the 4 spins into one big map and overlayed the theoretical walls over it. It is clear to see that the robot 
+                                        is able to accurately discern the walls close to it, but the accuracy of the readings fall off with further measurements. Additionally, it is evident that the 
+                                        assumption that the robot spins in place and doesn't drift is a poor assumption, since some of the walls seem to be translated off too far in one direction. 
+                                        Nonetheless, the robot did a relatively good job in scanning the environment and providing us with a mapping to use in future labs.
+                                    </p>                                    
+                                    <img class="img-fluid rounded d-block mb-5" src="assets/img/labs/9/Map.png" alt="..." />
                                 </div>
                             </div>
                         </div>
